@@ -1,0 +1,8 @@
+node_modules/
+.cache/
+.local/
+.env
+.env.*
+!.env.example
+renders/
+*.log
