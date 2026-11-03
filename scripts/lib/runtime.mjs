@@ -35,7 +35,7 @@ export function browserPath() {
 }
 export function localEnv() {
   const cache = path.join(ROOT, '.cache');
-  const temp = path.join(cache, 'temp'); fs.mkdirSync(temp, { recursive: true });
+  const temp = path.resolve(process.env.TUTORIAL_TEMP_DIR || path.join(cache, 'temp')); fs.mkdirSync(temp, { recursive: true });
   return { ...process.env, TEMP: temp, TMP: temp, TMPDIR: temp, npm_config_cache: path.join(cache, 'npm'),
     XDG_CACHE_HOME: cache, HYPERFRAMES_NO_UPDATE_CHECK: '1', HYPERFRAMES_SKIP_SKILLS: '1',
     TUTORIAL_RUNTIME_HOME: path.join(cache, 'tool-home'), XDG_CONFIG_HOME: path.join(cache, 'config'),
